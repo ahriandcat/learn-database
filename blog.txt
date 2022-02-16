@@ -1,0 +1,43 @@
+CREATE TABLE users(
+id int AUTO_INCREMENT Primary key,
+name text not null,
+email text not null,
+mobile text not null,
+password text not null,
+avatar blob
+)
+CREATE TABLE post(
+id int primary key,
+title text not null,
+content text not null,
+description text,
+author_id int,
+thumbnail blob,
+status text ,
+create_at text ,
+published_at text ,
+view_count int ,
+vote_score double,
+post_type text 
+)
+
+CREATE TABLE tag(
+id int Primary Key,
+name text 
+)
+
+CREATE TABLE post_tag(
+id_post int,
+id_tag int,
+Foreign key (id_post) References post(id),
+Foreign key (id_tag) References tag (id)
+)
+
+CREATE TABLE discuss(
+id int,
+post_id int,
+foreign key (post_id) References post(id),
+author_id int,
+is_public text,
+create_at text 
+)
