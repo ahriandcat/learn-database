@@ -1,0 +1,43 @@
+CREATE TABLE directors(
+id int primary key,
+name text,
+avatar blob,
+description text
+)
+
+CREATE TABLE movie(
+id int Primary Key,
+title text not null,
+poster blob,
+lenght int,
+rating text,
+id_directors int,
+Foreign key(id_directors) References directors (id),
+release_date date 
+)
+
+CREATE TABLE category(
+id int primary key,
+name text 
+)
+
+CREATE TABLE movie_category(
+id_movie int,
+id_category int,
+Foreign key (id_movie) References movie (id),
+Foreign key (id_category) References category (id)
+)
+
+CREATE TABLE actor(
+id int primary key,
+first_name text,
+last_name text not null,
+avatar blob 
+)
+
+CREATE TABLE movie_actor(
+id_movie int,
+id_actor int,
+Foreign key (id_movie) References movie (id),
+Foreign key (id_actor) References actor (id)
+) 
