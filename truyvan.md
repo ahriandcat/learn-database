@@ -26,3 +26,29 @@ from book
 WHERE id_publisher = 1
 ORDER BY page_number
 ```
+
+## Bài 2 :
+
+- ### `Tính trung bình cộng rental_rate của các bộ phim có rating là R : `
+
+```sql
+SELECT AVG(rental_rate) AS trung_binh
+from film
+WHERE rating = 'R'
+```
+
+- ### `Đếm các bộ phim có special_features là Deleted Scenes :`
+
+```sql
+SELECT COUNT(film_id) AS so_phim
+from film 
+WHERE special_features = 'Deleted Scenes'
+```
+
+- ### `Tìm các bộ phim theo tên có chứa ‘ACADEMY’ :`
+
+```sql
+SELECT film_id ,title 
+FROM film
+WHERE title LIKE '%ACADEMY%'
+```
