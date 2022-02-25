@@ -1,4 +1,4 @@
-# Database shop bán giày
+# Database blog
 
 ## `Tạo table users`
 
